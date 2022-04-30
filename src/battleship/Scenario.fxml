@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="battleship.ScenarioPickController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please select the Scenario ID you wish to play" />
+      <Region prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="scenario" promptText="e.g. default" />
+      <Region prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="select" alignment="CENTER" mnemonicParsing="false" text="Select" />
+   </children>
+</VBox>

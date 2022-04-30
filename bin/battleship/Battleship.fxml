@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="battleship.BattleshipController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Application">
+            <items>
+              <MenuItem fx:id="start" mnemonicParsing="false" text="Start" />
+                  <MenuItem fx:id="load" mnemonicParsing="false" text="Load" />
+                  <MenuItem fx:id="exit" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Details">
+            <items>
+              <MenuItem fx:id="enemyShips" mnemonicParsing="false" text="Enemy Ships" />
+                  <MenuItem fx:id="playerShots" mnemonicParsing="false" text="Player Shots" />
+                  <MenuItem fx:id="enemyShots" mnemonicParsing="false" text="Enemy Shots" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox minWidth="900.0" prefHeight="100.0" prefWidth="200.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <VBox minWidth="440.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your stats">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="playerPoints" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="playerAccuracy" strokeType="OUTSIDE" strokeWidth="0.0" text="0 %">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="playerShipsLeft" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" layoutX="20.0" layoutY="20.0" minWidth="440.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy stats">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="enemyPoints" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="enemyAccuracy" strokeType="OUTSIDE" strokeWidth="0.0" text="0 %">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="enemyShipsLeft" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="22.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <GridPane fx:id="playerGrid" gridLinesVisible="true">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fx:id="text" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="that" fill="RED" layoutX="62.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="10.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="4" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="6" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="7" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="8" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="9" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="10" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="8" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="9" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+            <GridPane id="enemyGrid" fx:id="enemyGrid" gridLinesVisible="true" layoutX="20.0" layoutY="20.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="39.0" prefWidth="39.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="39.0" prefHeight="39.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="4" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="6" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="7" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="8" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="9" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="10" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="8" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="9" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="X:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="targetx" promptText="X (Red) coordinate" />
+            <Text fill="BLUE" layoutX="20.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="targety" layoutX="53.0" layoutY="20.0" promptText="Y (Blue) coordinate" />
+            <Button fx:id="strike" mnemonicParsing="false" text="STRIKE!" />
+            <Region prefHeight="25.0" prefWidth="132.0" />
+            <Text fx:id="first" strokeType="OUTSIDE" strokeWidth="0.0" text="Player goes first">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="turnCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="Turn: 1/40">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+</VBox>
